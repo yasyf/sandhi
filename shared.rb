@@ -2,8 +2,8 @@ class Meta
   NOOP = 0x0
   HELLO = 0x1
   GOODBYE = 0x2
-  UTIL = 0x3
-  UNHAPPY = 0x4
+  UNHAPPY = 0x3
+  UTIL = 0x4
 end
 
 class Frame
