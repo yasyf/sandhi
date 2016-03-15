@@ -1,8 +1,9 @@
 class Meta
-  NOOP = 00000000
-  HELLO = 00000001
-  GOODBYE = 00000002
-  UTIL = 00000003
+  NOOP = 0x0
+  HELLO = 0x1
+  GOODBYE = 0x2
+  UTIL = 0x3
+  UNHAPPY = 0x4
 end
 
 class Frame
@@ -29,6 +30,13 @@ class Utilization < Frame
   def initialize(src, dst, apid, metrics)
     super src, dst, Meta::UTIL
     @data = { apid: apid, metrics: metrics } # metrics: [(metric * value)]
+  end
+end
+
+
+class Unhappy < Frame
+  def initialize(src, dst)
+    super src, dst, Meta::UNHAPPY
   end
 end
 
