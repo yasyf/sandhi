@@ -26,10 +26,14 @@ class Goodbye < Frame
   end
 end
 
+
 class Utilization < Frame
   def initialize(src, dst, apid, metrics)
     super src, dst, Meta::UTIL
-    @data = { apid: apid, metrics: metrics } # metrics: [(metric * value)]
+    # metric_t: (metric * value)
+    # bucket_t: [metric_t]
+    # data_t: (address * timestamp * [metric_t])
+    @data = { apid: apid, metrics: metrics }
   end
 end
 
